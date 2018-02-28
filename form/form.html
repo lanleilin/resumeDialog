@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>anchorList</title>
+    <style>
+        ul {
+            list-style: none;
+            padding: 3px 4px;
+            margin: 6px 10px;
+            color: #ea6f5a;
+            border: 1px solid #ea6f5a;
+            border-radius: 2px;
+            /*float: left;*/
+            display: block;
+        }
+        span{
+            color: #286090;
+        }
+    </style>
+    <script src="js/vue.min.js"></script>
+    <script src="js/candidateList.js"></script>
+    <!-- <script src="js/workAnchorList.js"></script> -->
+</head>
+
+<body>
+    <div id="app">
+    <ul v-for='(item,index) in candidateList' :key="index">
+        <li><span>公司</span>{{ item.name }}</li>
+        <li>{{ item.time }}</li>
+        <li>{{ item.address }}</li>
+        <li>{{ item.salary }}</li>
+        <li>{{ item.info }}</li>
+        <li>{{ item.tag }}</li>
+    </ul>
+        <!-- <a v-for='(item,index) in anchorList' :key="index" :href="item.url" target="blank"> {{ item.name }} </a> -->
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                candidateList: candidateList
+            }
+        })
+    </script>
+</body>
+
+</html>
