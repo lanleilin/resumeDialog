@@ -17,8 +17,13 @@
             /*float: left;*/
             display: block;
         }
-        span{
+
+        span {
             color: #286090;
+        }
+
+        .done {
+            color: lightgray;
         }
     </style>
     <script src="js/vue.min.js"></script>
@@ -28,21 +33,26 @@
 
 <body>
     <div id="app">
-    <ul v-for='(item,index) in candidateList' :key="index">
-        <li><span>公司</span>{{ item.name }}</li>
-        <li>{{ item.time }}</li>
-        <li>{{ item.address }}</li>
-        <li>{{ item.salary }}</li>
-        <li>{{ item.info }}</li>
-        <li>{{ item.tag }}</li>
-    </ul>
-        <!-- <a v-for='(item,index) in anchorList' :key="index" :href="item.url" target="blank"> {{ item.name }} </a> -->
+        <div v-for='(item,index) in candidateList' :key="index">
+            <ul :class='{done:item.isDone}'>
+                <!-- <li v-if='item.isDone'>test</li> -->
+                <li>
+                    <span>公司</span>{{ item.name }}</li>
+                <li>{{ item.time }}</li>
+                <li>{{ item.address }}</li>
+                <li>{{ item.salary }}</li>
+                <li>{{ item.info }}</li>
+                <li>{{ item.tag }}</li>
+            </ul>
+            <!-- <a v-for='(item,index) in anchorList' :key="index" :href="item.url" target="blank"> {{ item.name }} </a> -->
+        </div>
     </div>
     <script>
         var vm = new Vue({
             el: '#app',
             data: {
-                candidateList: candidateList
+                candidateList: candidateList,
+                isDone: true
             }
         })
     </script>
