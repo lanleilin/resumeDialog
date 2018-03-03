@@ -13,7 +13,7 @@ var candidateList = [{
     address: '南山区科技园南区科技南十二路2号金蝶大厦A栋（沙河西路与白石路交界处）',
     salary: '9k',
     info: 'more',
-    isDone: false,
+    isDone: true,
     tag:'郭俊辰17889987277'
 },
 {
@@ -22,7 +22,7 @@ var candidateList = [{
     address: '深圳市龙岗区南湾街道南岭1983创意小镇22号楼3楼F12',
     salary: '9k',
     info: 'more',
-    isDone: false,
+    isDone: true,
     tag:'张小姐 13342959552'
 },
 {
